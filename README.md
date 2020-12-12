@@ -130,7 +130,8 @@ Resources used include:
 
   5. Were you able to achieve the target model performance?
       
-      Unfortunately, no.  Highest achieved accuracy was during Attempt 2:  0.7259474992752075
+      Unfortunately, no.  
+      Highest achieved accuracy was during Attempt 2:  0.7259474992752075
       This was done by doubling epoch count from 50 to 100 and doubling neurons in the hidden layers.
   
   6. What steps did you take to try and increase model performance?
@@ -145,3 +146,9 @@ Include a recommendation for how a different model could solve this classificati
 There is a summary of the results (2 pt)
 There is a recommendation on using a different model to solve the classification problem, and justification (3 pt)-->
 ## Summary
+
+Overall, this was a good exercise in exploration of neural network machine learning using Python & Tensorflow.  It took through standard steps of data review, clean-up or pre-processing, variable selection for input/output, model creation, and evaluation.
+
+Then it allowed more freeform exploration of how machine learning model could be optimized to achieve higher overall accuracy.
+
+As a recommendation to further improve accuracy, I would consider an application which can put X & Y variables through a variety of standard models with base / default parameter selection.  Resultant output would compare accuracy for each model.  Based on model selected, then further refinement could be explored by modifying default parameters and / or modifying column dataset.
