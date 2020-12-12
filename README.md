@@ -39,10 +39,13 @@ Resources used include:
 * Data Preprocessing
   
   1. What variable(s) are considered the target(s) for your model?
+      
       IS_SUCCESSFUL column is the target or output of the model.
 
   2. What variable(s) are considered to be the features for your model?
+      
       Generally, all other columns in dataframe besides the "target" would be considered "features".  Features are those variables which act as an input to affect output.  
+      
       ``` Python
          # Split our preprocessed data into our features and target arrays
          x = app_merge_df.drop(columns="IS_SUCCESSFUL").values
@@ -97,16 +100,45 @@ Resources used include:
       
 
   3. What variable(s) are neither targets nor features, and should be removed from the input data?
+  
+  EIN & NAME columns are not targets or featurs and were removed from the model.
+  
+  ``` Python
+   # Drop the non-beneficial ID columns, 'EIN' and 'NAME'.
+   app_modify_df = application_df.drop(['EIN','NAME'], axis=1)
+   app_modify_df.head()
+  ```
 
 * Compiling, Training, and Evaluating the Model
   
   4. How many neurons, layers, and activation functions did you select for your neural network model, and why?
+  
+      For Neurons, I worked from 2x the number of features being used & also doubling for each layer which existed.
+      * Features = 43
+      * Layer 1 = 172 = 43 * 2 * 2
+      * Layer 2 = 86 = 43 * 2
+      * Layer 3 = 43 
+      These values were arrived at by estimation and review of articles such as shown below.
+  
+      For reference:
+      * https://machinelearningmastery.com/how-to-configure-the-number-of-layers-and-nodes-in-a-neural-network/
+      * https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw#:~:text=The%20number%20of%20hidden%20neurons,size%20of%20the%20input%20layer.
+
+      For activation functions, "relu" and "swish" were used.
+         * "relu" was primarily used by default since it had been used throughout most of the module examples
+         * "swish" was alternatively chosen as something new to apply based on options found in [Tensorflow documentation](https://www.tensorflow.org/api_docs/python/tf/keras/activations).
 
   5. Were you able to achieve the target model performance?
+      
+      Unfortunately, no.  Highest achieved accuracy was during Attempt 2:  0.7259474992752075
+      This was done by doubling epoch count from 50 to 100 and doubling neurons in the hidden layers.
   
   6. What steps did you take to try and increase model performance?
-
-
+      
+      * Increase Epoch count from 50 to 100
+      * Doubling neuron count within hidden layers
+      * Adding a 3rd hidden layer
+      * Changing activation from "relu" to "swish"
 
 <!-- Summarize the overall results of the deep learning model. 
 Include a recommendation for how a different model could solve this classification problem, and explain your recommendation. 
