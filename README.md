@@ -6,11 +6,11 @@ Module 19 UT Data Visualization Bootcamp -- Neural Network Exploration using Pyt
 
 Module 19 challenge assignment is broken in to 3 specific deliverables:
 1.  Pre-process sample data set for use within a neural network model
-   * Includes column value grouping based on uniqueness
+    * Includes column value grouping based on uniqueness
 2.  Compile, Train, and Evaluate Model using [Tensorflow Keras](https://www.tensorflow.org/api_docs/python/tf/keras)
-   * Includes initial determination of neuron count within hidden node layers
+    * Includes initial determination of neuron count within hidden node layers
 3.  Optimization of the Model with goal to achieve target predictive accuracy higher than 75%
-  * This was exercise on exploring effects on model accuracy
+    * This was exercise on exploring effects on model accuracy
 
 Sample Data
 * >34,000 organizations
