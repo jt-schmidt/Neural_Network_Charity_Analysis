@@ -13,7 +13,7 @@ Module 19 challenge assignment is broken in to 3 specific deliverables:
     * This was exercise on exploring effects on model accuracy
 
 Sample Data
-* >34,000 organizations
+* Over 34,000 organizations
 * Variety of metadata for each organization
   * EIN and NAME—Identification columns
   * APPLICATION_TYPE—Alphabet Soup application type
@@ -39,8 +39,62 @@ Resources used include:
 * Data Preprocessing
   
   1. What variable(s) are considered the target(s) for your model?
+      IS_SUCCESSFUL column is the target or output of the model.
 
   2. What variable(s) are considered to be the features for your model?
+      Generally, all other columns in dataframe besides the "target" would be considered "features".  Features are those variables which act as an input to affect output.  
+      ``` Python
+         # Split our preprocessed data into our features and target arrays
+         x = app_merge_df.drop(columns="IS_SUCCESSFUL").values
+         y = app_merge_df.IS_SUCCESSFUL.values
+      ```
+      
+      For this exercise, the features are:
+      * STATUS
+      * ASK_AMT
+      * IS_SUCCESSFUL
+      * APPLICATION_TYPE_Other
+      * APPLICATION_TYPE_T10
+      * APPLICATION_TYPE_T19
+      * APPLICATION_TYPE_T3
+      * APPLICATION_TYPE_T4
+      * APPLICATION_TYPE_T5
+      * APPLICATION_TYPE_T6
+      * APPLICATION_TYPE_T7
+      * APPLICATION_TYPE_T8
+      * AFFILIATION_CompanySponsored
+      * AFFILIATION_Family/Parent
+      * AFFILIATION_Independent
+      * AFFILIATION_National
+      * AFFILIATION_Other
+      * AFFILIATION_Regional
+      * CLASSIFICATION_C1000
+      * CLASSIFICATION_C1200
+      * CLASSIFICATION_C2000
+      * CLASSIFICATION_C2100
+      * CLASSIFICATION_C3000
+      * CLASSIFICATION_Other
+      * USE_CASE_CommunityServ
+      * USE_CASE_Heathcare
+      * USE_CASE_Other
+      * USE_CASE_Preservation
+      * USE_CASE_ProductDev
+      * ORGANIZATION_Association
+      * ORGANIZATION_Co-operative
+      * ORGANIZATION_Corporation
+      * ORGANIZATION_Trust
+      * INCOME_AMT_0
+      * INCOME_AMT_1-9999
+      * INCOME_AMT_10000-24999
+      * INCOME_AMT_100000-499999
+      * INCOME_AMT_10M-50M
+      * INCOME_AMT_1M-5M
+      * INCOME_AMT_25000-99999
+      * INCOME_AMT_50M+
+      * INCOME_AMT_5M-10M
+      * SPECIAL_CONSIDERATIONS_N
+      * SPECIAL_CONSIDERATIONS_Y
+      
 
   3. What variable(s) are neither targets nor features, and should be removed from the input data?
 
